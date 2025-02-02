@@ -6,9 +6,12 @@ WORKDIR /usr/src/app
 
 # Step 3: Copy the package.json and package-lock.json files to install dependencies
 COPY package*.json ./
+# Clean the node_modules directory (in case of previous issues)
+RUN rm -rf /usr/src/app/node_modules
 
-# Step 4: Install any needed dependencies
-RUN npm install
+# Install npm packages
+RUN npm install --retry 5
+
 
 # Step 5: Copy the rest of your application code into the container
 COPY . .
