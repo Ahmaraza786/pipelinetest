@@ -13,6 +13,6 @@ RUN npm install --production --no-optional --max-old-space-size=512
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["npm", "start"]

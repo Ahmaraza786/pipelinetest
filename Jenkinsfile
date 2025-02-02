@@ -4,6 +4,7 @@ pipeline {
     environment {
         IMAGE_NAME = "my-app:latest"
         CONTAINER_NAME = "my-container"
+         APP_PORT = "3000" 
     }
 
     stages {
